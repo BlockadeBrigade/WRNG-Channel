@@ -1,0 +1,30 @@
+import React, { forwardRef, useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { RootState, Video } from "../types"
+import MasonryGrid from "../components/layout/MasonryGrid"
+import { fetchVideoFromApi } from "../features/video/videoSlice"
+
+const PortfolioPage = forwardRef<HTMLDivElement>((props, ref) => {
+  const videos = useSelector((state: RootState) => state.videos.videos)
+  const dispatch = useDispatch()
+  let filteredVideos: Video[] = []
+
+  useEffect(() => {
+    dispatch(fetchVideoFromApi())
+  }, [dispatch])
+
+  videos?.map((videos: Video) =>
+    videos?.Category === "Commercial" ? filteredVideos.push(videos) : undefined,
+  )
+  console.log(filteredVideos)
+
+  return (
+    <div ref={ref} className="min-h-screen bg-black pt-2">
+      <div className="mx-auto px-4">
+        <MasonryGrid videos={filteredVideos} />
+      </div>
+    </div>
+  )
+})
+
+export default PortfolioPage
