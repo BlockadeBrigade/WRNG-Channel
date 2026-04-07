@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { RootState, Video } from "../types"
 import MasonryGrid from "../components/layout/MasonryGrid"

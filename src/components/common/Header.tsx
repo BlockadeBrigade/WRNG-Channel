@@ -1,9 +1,9 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { Link, Navigate } from "react-router"
+import { Link } from "react-router"
 import { useEffect, useState } from "react"
-import { RootState, SectionRefs, UIState } from "../../types/index"
-import { setPage, toggleMenu } from "../../features/ui/uiSlice"
+import { RootState, SectionRefs } from "../../types/index"
+import { toggleMenu } from "../../features/ui/uiSlice"
 import { useNavigate } from "react-router"
 
 const Header: React.FC = ({ targetRef }) => {
@@ -11,7 +11,7 @@ const Header: React.FC = ({ targetRef }) => {
   const dispatch = useDispatch()
   const menuOpen = useSelector((state: RootState) => state.ui.menuOpen)
   const siteSettings = useSelector(
-    (state: RootState) => state.siteSettings.siteSettings,
+    (state: RootState) => state.siteSettings?.siteSettings,
   )
 
   const [scrollDirection, setScrollDirection] = useState("scrollDown")

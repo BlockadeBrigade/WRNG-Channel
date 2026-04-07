@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { Video } from "../../types"
 import {
   Transition,
@@ -8,7 +8,6 @@ import {
   DialogPanel,
   DialogBackdrop,
 } from "@headlessui/react"
-import { setCurrentVideo } from "../../features/video/videoSlice"
 
 interface VideoCardProps {
   video: Video
@@ -20,7 +19,6 @@ const VideoCard: React.FC<VideoCardProps> = ({ video, index }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-  const dispatch = useDispatch()
   let previewTimeout: number | string | timeout = null
 
   const startPreview = () => {

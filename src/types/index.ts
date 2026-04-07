@@ -2,11 +2,13 @@ export interface Video {
   VideoName: string
   VideoUpload: string
   Category: string
+  id: number
 }
 
 export interface SettingState {
   isSettingLoading: boolean
   settingFailedToLoad: boolean
+  siteSettings: SettingState
 }
 
 export interface VideoState {
@@ -18,13 +20,6 @@ export interface VideoState {
 }
 
 export interface UIState {
-  currentPage:
-    | "landing"
-    | "home"
-    | "portfolio"
-    | "narrative"
-    | "about"
-    | "contact"
   menuOpen: boolean
   loading: boolean
 }
