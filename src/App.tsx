@@ -11,7 +11,7 @@ import Shop from "./pages/Shop"
 import RootLayout from "./pages/RootLayout"
 import StudioRoute from "../studio-Wrng-Channel/StudioRoute"
 
-const AppContent: React.FC = () => {
+const App: React.FC = () => {
   const router = createBrowserRouter([
     { path: "/studio", Component: StudioRoute, ErrorBoundary: ErrorPage },
     {
@@ -43,16 +43,12 @@ const AppContent: React.FC = () => {
   ])
 
   return (
-    <RouterProvider router={router}>
-      <div className="min-h-screen bg-black"></div>
-    </RouterProvider>
-  )
-}
-
-const App: React.FC = () => {
-  return (
     <Provider store={store}>
-      <AppContent />
+      <RouterProvider router={router}>
+        <App>
+          <div className="min-h-screen bg-black"></div>
+        </App>
+      </RouterProvider>
     </Provider>
   )
 }
