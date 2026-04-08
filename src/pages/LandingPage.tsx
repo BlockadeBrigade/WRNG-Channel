@@ -36,10 +36,7 @@ const LandingPage: React.FC = () => {
         </video>
         <p className="text-lg pt-2 text-gray-400">SCROLL DOWN</p>
         <div className=" overflow-hidden">
-          <button
-            onClick={() => dispatch(setPage("home"))}
-            className=" text-2xl rotate-180   text-neutral-200 "
-          >
+          <button className=" text-2xl rotate-180   text-neutral-200 ">
             <p className="  text-neutral-200 py-0 -my-3 text-2xl animate-scrollSliding  [animation-delay:1s] ">
               ^
             </p>
