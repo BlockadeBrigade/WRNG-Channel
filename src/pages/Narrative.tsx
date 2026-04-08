@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react"
+import { forwardRef } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useEffect } from "react"
 import { RootState, Video } from "../types"
@@ -17,7 +17,6 @@ const NarrativePage = forwardRef<HTMLDivElement>((props, ref) => {
   videos?.map((videos: Video) =>
     videos?.Category === "Narrative" ? filteredVideos.push(videos) : undefined,
   )
-
 
   return (
     <div ref={ref} className="min-h-screen bg-black pt-2">

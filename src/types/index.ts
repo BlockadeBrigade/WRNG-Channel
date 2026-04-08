@@ -8,7 +8,7 @@ export interface Video {
 export interface SettingState {
   isSettingLoading: boolean
   settingFailedToLoad: boolean
-  siteSettings: SettingState
+  siteSettings: 
 }
 
 export interface VideoState {

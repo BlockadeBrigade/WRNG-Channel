@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useRef, useState } from "react"
-import { useDispatch } from "react-redux"
 import { Video } from "../../types"
 import {
   Transition,

@@ -1,5 +1,5 @@
 import React from "react"
-import { Provider, useSelector } from "react-redux"
+import { Provider } from "react-redux"
 import { createBrowserRouter, RouterProvider } from "react-router"
 import { store } from "./store"
 import MainContent from "./pages/MainContent"
