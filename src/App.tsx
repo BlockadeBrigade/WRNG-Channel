@@ -12,7 +12,6 @@ import StudioRoute from "../studio-Wrng-Channel/StudioRoute"
 
 const App: React.FC = () => {
   const router = createBrowserRouter([
-    { path: "/studio", Component: StudioRoute, ErrorBoundary: ErrorPage },
     {
       path: "/",
       Component: RootLayout,
@@ -37,6 +36,7 @@ const App: React.FC = () => {
           Component: ContactPage,
           ErrorBoundary: ErrorPage,
         },
+        { path: "/studio", Component: StudioRoute, ErrorBoundary: ErrorPage },
       ],
     },
   ])
