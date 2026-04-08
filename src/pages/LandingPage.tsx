@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { setPage } from "../features/ui/uiSlice"
 import { fetchSettingsFromApi } from "../features/siteSettings/siteSettingSlice"
 import { RootState } from "../store"
+import { useAppDispatch } from "../features/hooks"
 
 const LandingPage: React.FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const [isLoaded, setIsLoaded] = useState<boolean>(false)
   const siteSettings = useSelector(
     (state: RootState) => state?.siteSettings.siteSettings,

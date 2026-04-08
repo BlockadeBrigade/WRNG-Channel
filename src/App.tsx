@@ -43,11 +43,7 @@ const App: React.FC = () => {
 
   return (
     <Provider store={store}>
-      <RouterProvider router={router}>
-        <App>
-          <div className="min-h-screen bg-black"></div>
-        </App>
-      </RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </Provider>
   )
 }

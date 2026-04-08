@@ -8,8 +8,7 @@ const uiSlice = createSlice({
     loading: false,
   } as UIState,
   reducers: {
-    setPage: (state, action: PayloadAction<UIState["currentPage"]>) => {
-      state.currentPage = action.payload
+    setPage: state => {
       state.menuOpen = false
     },
     toggleMenu: state => {

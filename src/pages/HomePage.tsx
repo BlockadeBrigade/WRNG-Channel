@@ -1,12 +1,13 @@
 import { forwardRef, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import { RootState, Video } from "../types"
 import MasonryGrid from "../components/layout/MasonryGrid"
 import { fetchVideoFromApi } from "../features/video/videoSlice"
+import { useAppDispatch } from "../features/hooks"
 
 const HomePage = forwardRef<HTMLDivElement>((props, ref) => {
   const videos = useSelector((state: RootState) => state?.videos.videos)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   let filteredVideos: Video[] = []
 
   useEffect(() => {

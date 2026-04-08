@@ -1,10 +1,11 @@
 import React, { useEffect } from "react"
 import { fetchSettingsFromApi } from "../features/siteSettings/siteSettingSlice"
-import { useSelector, useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import { RootState } from "../types"
+import { useAppDispatch } from "../features/hooks"
 
 const AboutPage: React.FC = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const siteSettings = useSelector(
     (state: RootState) => state?.siteSettings.siteSettings,
   )
@@ -42,7 +43,7 @@ const AboutPage: React.FC = () => {
                   Skills
                 </h4>
                 <div className="flex flex-wrap font-victor gap-2">
-                  {siteSettings[0]?.skills.map(skill => (
+                  {siteSettings[0]?.skills.map((skill: string) => (
                     <span
                       key={skill}
                       className="rounded-xs bg-violet-400 px-4 py-2 text-sm text-black"

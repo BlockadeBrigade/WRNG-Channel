@@ -1,14 +1,19 @@
 import React from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { Link } from "react-router"
 import { useEffect, useState } from "react"
 import { RootState, SectionRefs } from "../../types/index"
 import { toggleMenu } from "../../features/ui/uiSlice"
 import { useNavigate } from "react-router"
+import { useAppDispatch } from "../../features/hooks"
 
-const Header: React.FC = ({ targetRef }) => {
+interface HeaderProps {
+  targetRef: React.RefObject<HTMLDivElement>
+}
+
+const Header: React.FC<HeaderProps> = ({ targetRef }) => {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
   const menuOpen = useSelector((state: RootState) => state.ui.menuOpen)
   const siteSettings = useSelector(
     (state: RootState) => state.siteSettings?.siteSettings,

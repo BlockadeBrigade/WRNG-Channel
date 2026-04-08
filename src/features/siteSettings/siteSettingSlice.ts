@@ -21,6 +21,7 @@ const settingSlice = createSlice({
     siteSettings: [],
     isSettingLoading: false,
     settingFailedToLoad: false,
+    error: null,
   } as SettingState,
   reducers: {},
   extraReducers: builder => {

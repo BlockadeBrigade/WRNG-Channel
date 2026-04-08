@@ -18,7 +18,7 @@ const VideoCard: React.FC<VideoCardProps> = ({ video, index }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
-  let previewTimeout: number | string | timeout = null
+  let previewTimeout: ReturnType<typeof setTimeout> | null = null
 
   const startPreview = () => {
     videoRef.current!.muted = true
