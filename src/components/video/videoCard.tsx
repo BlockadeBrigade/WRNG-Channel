@@ -38,9 +38,11 @@ const VideoCard: React.FC<VideoCardProps> = ({ video, index }) => {
   })
 
   videoRef.current?.addEventListener("mouseleave", () => {
-    clearTimeout(previewTimeout)
-    previewTimeout = null
-    stopPreview()
+    if (previewTimeout) {
+      clearTimeout(previewTimeout)
+      previewTimeout = null
+      stopPreview()
+    }
   })
 
   useEffect(() => {

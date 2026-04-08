@@ -5,7 +5,7 @@ import MasonryGrid from "../components/layout/MasonryGrid"
 import { fetchVideoFromApi } from "../features/video/videoSlice"
 import { useAppDispatch } from "../features/hooks"
 
-const PortfolioPage = forwardRef<HTMLDivElement>((props, ref) => {
+const PortfolioPage = forwardRef<HTMLDivElement>((_props, ref) => {
   const videos = useSelector((state: RootState) => state.videos.videos)
   const dispatch = useAppDispatch()
   let filteredVideos: Video[] = []

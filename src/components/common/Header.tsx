@@ -8,7 +8,7 @@ import { useNavigate } from "react-router"
 import { useAppDispatch } from "../../features/hooks"
 
 interface HeaderProps {
-  targetRef: React.RefObject<HTMLDivElement>
+  targetRef: SectionRefs
 }
 
 const Header: React.FC<HeaderProps> = ({ targetRef }) => {
@@ -22,7 +22,10 @@ const Header: React.FC<HeaderProps> = ({ targetRef }) => {
   const [scrollDirection, setScrollDirection] = useState("scrollDown")
 
   const handleScrollIntoView = (key: keyof SectionRefs) => {
-    targetRef[key].current?.scrollIntoView({ behavior: "smooth" })
+    const section = targetRef[key] as React.RefObject<HTMLElement> | null
+    if (section?.current) {
+      section?.current.scrollIntoView({ behavior: "smooth" })
+    }
   }
   useEffect(() => {
     let lastScroll = window.scrollY
