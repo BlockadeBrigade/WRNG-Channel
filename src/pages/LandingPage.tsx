@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { setPage } from "../features/ui/uiSlice"
 import { fetchSettingsFromApi } from "../features/siteSettings/siteSettingSlice"
 import { RootState } from "../store"
 import { useAppDispatch } from "../features/hooks"
