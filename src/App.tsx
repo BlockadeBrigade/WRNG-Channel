@@ -36,7 +36,7 @@ const App: React.FC = () => {
           Component: ContactPage,
           ErrorBoundary: ErrorPage,
         },
-        { path: "/studio", Component: StudioRoute, ErrorBoundary: ErrorPage },
+        { path: "/studio/*", Component: StudioRoute, ErrorBoundary: ErrorPage },
       ],
     },
   ])
